@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace SpaDay6.Controllers
 {
@@ -40,7 +34,7 @@ namespace SpaDay6.Controllers
         }
 
         [HttpPost]
-        [Route("/spa")]
+        [Route("/menu")] // Bonus mission 3 - change route from /spa
         public IActionResult Menu(string name, string skintype, string manipedi)
         {
             List<string> facials = new List<string>()
@@ -56,8 +50,23 @@ namespace SpaDay6.Controllers
                     appropriateFacials.Add(facials[i]);
                 }
             }
+            ViewBag.Name = name;
+            ViewBag.SkinType = skintype;
+            ViewBag.AppropriateFacials = appropriateFacials;
+            ViewBag.ManiPedi = manipedi;
+
+            // Bonus mission 1
+            List<string> polishChoices = new();
+            polishChoices.Add("#ed553e");
+            polishChoices.Add("#ed3e4d");
+            polishChoices.Add("#d12c71");
+            polishChoices.Add("#a31787");
+            polishChoices.Add("#34a39e");
+            polishChoices.Add("#63c295");
+            ViewBag.PolishChoices = polishChoices;
             return View();
         }
+
     }
 }
 

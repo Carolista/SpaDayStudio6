@@ -16,3 +16,21 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/* Bonus mission 1 */
+
+#polish-collection {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    background-color: white;
+    margin-top: 15px;
+    padding-bottom: 30px;
+}
+
+.polish-sample {
+    height: 50px;
+    width: 50px;
+    margin: 0;
+    padding: 0;
+}
