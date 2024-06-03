@@ -5,11 +5,6 @@ namespace SpaDay6;
 [Route("/user")]
 public class UserController : Controller
 {
-    [HttpGet]
-    public IActionResult RenderUserWelcomePage()
-    {
-        return View("Index");
-    }
 
     [HttpGet("add")]
     public IActionResult RenderAddUserForm()
@@ -18,16 +13,14 @@ public class UserController : Controller
     }
 
     [HttpPost("add")]
-    public IActionResult ProcessAddUserForm(string username, string email, string password, string verify)
+    public IActionResult ProcessAddUserForm(User newUser, string verify)
     {
-        if (password != verify)
+        ViewBag.User = newUser;
+        if (newUser.Password != verify)
         {
-            ViewBag.Username = username;
-            ViewBag.Email = email;
             ViewBag.Error = "Passwords must match.";
             return View("Add");
         }
-        ViewBag.User = new User(username, email, password);
         return View("Index");
     }
 }
