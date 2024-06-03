@@ -1,0 +1,14 @@
+<form method="POST">
+    <h3>Register</h3>
+
+    <label>Username: <input type="text" name="username" value="@ViewBag.Username" /></label><br />
+    <label>Email: <input type="email" name="email" value="@ViewBag.Email" /></label><br />
+    <label>Password: <input type="password" name="password" /></label><br />
+    <label>Verify Password: <input type="password" name="verify" /></label><br />
+    @if (ViewBag.Error != null || ViewBag.Error != "")
+    {
+        <span style="color: darkred">@ViewBag.Error</span><br />
+    }
+
+    <button type="submit">Submit</button>
+</form>

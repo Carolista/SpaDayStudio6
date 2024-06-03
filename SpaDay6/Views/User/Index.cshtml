@@ -1,0 +1,15 @@
+@{
+    @* string usernameText = !ViewBag.Username?.IsEmpty() ? ViewBag.Username : ""; *@
+}
+
+<h1>Welcome @ViewBag.User.Username</h1>
+
+<p>Click <a asp-controller="Spa" asp-action="Index">here</a> to select your spa services.</p>
+
+<hr />
+
+@* Bonus mission 1 *@
+<div >
+    <p>Email: @ViewBag.User.Email<br />
+    Joined: @ViewBag.User.Date</p>
+</div>
