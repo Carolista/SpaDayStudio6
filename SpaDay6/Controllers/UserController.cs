@@ -6,6 +6,9 @@ namespace SpaDay6;
 public class UserController : Controller
 {
 
+    // NOTE: There is no endpoint for GET /user so you will get a 404 if you try to 
+    // go directly there in the browser instead of starting at /user/add
+
     // Endpoint: GET /user/add
     [HttpGet("add")]
     public IActionResult RenderAddUserForm()
