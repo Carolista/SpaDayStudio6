@@ -6,13 +6,15 @@ namespace SpaDay6;
 public class UserController : Controller
 {
 
+    // Endpoint: GET /user/add
     [HttpGet("add")]
     public IActionResult RenderAddUserForm()
     {
         return View("Add");
     }
 
-    [HttpPost("add")]
+    // Endpoint: POST /user
+    [HttpPost]
     public IActionResult ProcessAddUserForm(User newUser, string verify)
     {
         ViewBag.User = newUser;
