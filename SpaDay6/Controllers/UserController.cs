@@ -29,21 +29,14 @@ namespace SpaDay6.Controllers
         {   
             if (ModelState.IsValid)
             {
-                if (addUserViewModel.Password == addUserViewModel.VerifyPassword)
+                User newUser = new()
                 {
-                    User newUser = new()
-                    {
-                        Username = addUserViewModel.Username,
-                        Email = addUserViewModel.Email,
-                        Password = addUserViewModel.Password
-                    };
-                    ViewBag.user = newUser;
-                    return View("Index", newUser);
-                }
-                else
-                {   
-                    ViewBag.error = "Passwords do not match! Try again!";
-                }
+                    Username = addUserViewModel.Username,
+                    Email = addUserViewModel.Email,
+                    Password = addUserViewModel.Password
+                };
+                ViewBag.user = newUser;
+                return View("Index", newUser);
             } 
             return View("Add", addUserViewModel);
         }

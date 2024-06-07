@@ -13,6 +13,7 @@ public class AddUserViewModel
 
     [Required(ErrorMessage = "Password is required.")]
     [StringLength(20, MinimumLength = 6, ErrorMessage = "Username must be 6-20 characters long.")]
+    [Compare("VerifyPassword", ErrorMessage = "Passwords must match!")]
     public string? Password { get; set; }
 
     [StringLength(20, MinimumLength = 6, ErrorMessage = "Username must be 6-20 characters long.")]

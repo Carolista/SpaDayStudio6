@@ -3,11 +3,6 @@
 
 <h1>Sign Up Form</h1>
 
-@if (ViewBag.error != null)
-{
-    <p>@ViewBag.error</p>
-}
-
 <form method="post" action="/user">
     <div class="form-group">
         <label asp-for="Username">Username</label>
