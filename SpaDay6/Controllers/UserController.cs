@@ -36,10 +36,9 @@ namespace SpaDay6.Controllers
                     Password = addUserViewModel.Password
                 };
                 ViewBag.user = newUser;
-                return View("Index", newUser);j
+                return View("Index", newUser);
             } 
             return View("Add", addUserViewModel);
         }
     }
 }
-
